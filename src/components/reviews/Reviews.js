@@ -23,4 +23,4 @@ class Reviews extends Component {
 
 };
 
-export default Reviews;iews;
+export default Reviews;
