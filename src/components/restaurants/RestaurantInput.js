@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class RestaurantInput extends Component {
-  state = { text: "" };
+  state = { text: "sample" };
 
   handleChange = event => this.setState({ text: event.target.value });
 
