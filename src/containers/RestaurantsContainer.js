@@ -11,7 +11,10 @@ class RestaurantsContainer extends Component {
           handleSubmit={this.handleSubmit}
           addRestaurant={this.props.addRestaurant}
         />
-        <Restaurants restaurants={this.props.restaurants} />
+        <Restaurants
+          restaurants={this.props.restaurants}
+          deleteRestaurant={this.props.deleteRestaurant}
+        />
       </div>
     );
   }
