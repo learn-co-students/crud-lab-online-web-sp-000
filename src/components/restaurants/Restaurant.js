@@ -16,7 +16,7 @@ class Restaurant extends Component {
             {" "}
             X{" "}
           </button>
-          {/* <ReviewsContainer restaurant={restaurant}/> */}
+          <ReviewsContainer restaurant={restaurant}/>
         </li>
       </div>
     );
