@@ -4,6 +4,8 @@ import Reviews from '../components/reviews/Reviews'
 
 class ReviewsContainer extends Component {
 
+  handleSubmit = () => this.props.addRestaurant(this.state)
+  
   render() {
     return (
       <div>
@@ -14,4 +16,7 @@ class ReviewsContainer extends Component {
   }
 }
 
-export default ReviewsContainer
+export default connect(
+  // mapStateToProps,
+  // mapDispatchToProps
+)(ReviewsContainer);
