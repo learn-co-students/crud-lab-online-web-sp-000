@@ -7,7 +7,9 @@ export default function manageRestaurants(state = { restaurants: [] }, action) {
       const newRest = { text: action.text, id: cuid() };
       return { restaurants: [...state.restaurants, newRest] };
     case "DELETE_RESTAURANT":
-    break
+      return {
+        restaurants: state.restaurants.filter(r => r.id !== action.restaurantID)
+      };
     default:
       return state;
   }
