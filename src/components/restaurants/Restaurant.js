@@ -8,7 +8,7 @@ class Restaurant extends Component {
     return (
       <div>
         <li>
-          {this.props.restaurant.name}
+          {this.props.restaurant.text}
           {/* <button> X </button> */}
           {/* <ReviewsContainer restaurant={restaurant}/> */}
         </li>
