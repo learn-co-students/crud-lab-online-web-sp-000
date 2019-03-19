@@ -8,10 +8,12 @@ import { combineReducers } from "redux";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-const store = createStore(manageRestaurant);
-// const store = createStore(
-//   combineReducers({ restaurants: manageRestaurant, reviews: manageReview })
-// );
+// const store = createStore(manageRestaurant);
+const store = createStore(
+  combineReducers({ restaurants: manageRestaurant, 
+    reviews: manageReview 
+  })
+);
 
 ReactDOM.render(
   <Provider store={store}>
