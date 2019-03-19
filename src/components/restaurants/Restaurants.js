@@ -4,7 +4,7 @@ import Restaurant from "./Restaurant";
 class Restaurants extends Component {
   render() {
     return (
-      <p>
+      <div>
         Your Restaurants:
         <ul>
           {this.props.restaurants.map(restaurant => (
@@ -15,7 +15,7 @@ class Restaurants extends Component {
             />
           ))}
         </ul>
-      </p>
+      </div>
     );
   }
 }
