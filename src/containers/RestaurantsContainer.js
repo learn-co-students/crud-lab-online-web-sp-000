@@ -5,8 +5,6 @@ import { connect } from "react-redux";
 
 class RestaurantsContainer extends Component {
   render() {
-    console.log("RestContainer props:", this.props);
-
     return (
       <div>
         <RestaurantInput
@@ -20,9 +18,9 @@ class RestaurantsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("mapStateToProps");
   return {
-    restaurants: [{id: 1, name: "burger king"}]
+    restaurants: state.restaurants
+    // restaurants: [...state.restaurants, { id: 1, name: "burger king" }]
   };
 };
 
