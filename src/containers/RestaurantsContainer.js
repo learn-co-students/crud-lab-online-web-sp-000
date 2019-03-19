@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 
 class RestaurantsContainer extends Component {
 
-
   render() {
     return (
       <div>
@@ -24,7 +23,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addRestaurant: restaurant => dispatch({ type: 'ADD_RESTAURANT', restaurant: restaurant}),
+    addRestaurant: name => dispatch({ type: 'ADD_RESTAURANT', name: name}),
     deleteRestaurant: restaurantID => dispatch({ type: 'DELETE_RESTAURANT', restaurantID: restaurantID}) 
   }
 }
