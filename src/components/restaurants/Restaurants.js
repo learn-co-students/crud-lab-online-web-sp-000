@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Restaurant from "./Restaurant";
 
 class Restaurants extends Component {
-
   renderRestaurants() {
     return this.props.restaurants.map(restaurant => (
       <Restaurant
@@ -10,17 +9,14 @@ class Restaurants extends Component {
         restaurant={restaurant}
         deleteRestaurant={this.props.deleteRestaurant}
       />
-    ))
+    ));
   }
 
-  
   render() {
     return (
       <div>
         Your Restaurants:
-        <ul>
-          {this.renderRestaurants()}
-        </ul>
+        <ul>{this.renderRestaurants()}</ul>
       </div>
     );
   }

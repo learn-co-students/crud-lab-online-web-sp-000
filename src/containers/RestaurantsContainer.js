@@ -23,7 +23,6 @@ class RestaurantsContainer extends Component {
 const mapStateToProps = state => {
   return {
     restaurants: state.restaurants
-    // restaurants: [...state.restaurants, { id: 1, text: "burger king" }]
   };
 };
 

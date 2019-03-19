@@ -1,19 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import manageRestaurant from "./reducers/manageRestaurant";
-import manageReview from "./reducers/manageReview";
-import { combineReducers } from "redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import manageRestaurants from './reducers/manageRestaurant'
+import manageReviews from './reducers/manageReview'
 
-import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
 
-// const store = createStore(manageRestaurant);
-const store = createStore(
-  combineReducers({ restaurants: manageRestaurant, 
-    reviews: manageReview 
-  })
-);
+const rootReducer = combineReducers({
+  restaurants: manageRestaurants,
+  reviews: manageReviews,
+})
+
+// const store = createStore(rootReducer)
+const store = createStore(manageRestaurants)
 
 ReactDOM.render(
   <Provider store={store}>
