@@ -25,6 +25,7 @@ class RestaurantInput extends Component {
       <div>
         <form onSubmit={this.handleOnSubmit}>
           <input
+            placeholder='Enter Restaurant Name'
             type="text"
             value={this.state.text}
             onChange={this.handleOnChange} 
