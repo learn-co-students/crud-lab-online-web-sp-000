@@ -23,6 +23,14 @@ export default function manageRestaurants(
       );
       return { ...state, restaurants };
 
+    case "ADD_REVIEW":
+      const review = {
+        text: action.review.text,
+        restaurantId: action.review.restaurantId,
+        id: cuidFn()
+      };
+      return { ...state, reviews: [...state.reviews, review] };
+
     default:
       return state;
   }
