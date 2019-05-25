@@ -2,19 +2,19 @@ import React, { Component } from "react";
 
 class RestaurantInput extends Component {
   state = {
-    restaurantName: ""
+    text: ""
   };
 
   handleOnChange(event) {
     this.setState({
-      restaurantName: event.target.value
+      text: event.target.value
     });
   }
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.addRestaurant(this.state.restaurantName);
-    this.setState({ restaurantName: "" });
+    this.props.addRestaurant(this.state.text);
+    this.setState({ text: "" });
   }
 
   render() {
