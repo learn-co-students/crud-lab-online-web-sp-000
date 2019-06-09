@@ -1,10 +1,40 @@
 import React, { Component } from 'react';
 
 class RestaurantInput extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      text: ''
+    }
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.addRestaurant(this.state.text)
+    this.setState({
+      text: ''
+    })
+  }
+
+  handleOnChange(event) {
+    this.setState({
+      text: event.target.value
+    })
+  }
+
   render() {
     return (
       <div>
-        Restaurant Input
+        <form
+          onSubmit={(event) => this.handleSubmit(event)}>
+            <input
+              type="text"
+              placeholder="Restaurant"
+              value={this.state.text}
+              onChange={(event)=> this.handleOnChange(event)}
+              />
+            <input type="submit" />
+        </form>
       </div>
     );
   }
