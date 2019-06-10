@@ -20,7 +20,6 @@ class ReviewsContainer extends Component {
 }
 
     const mapStateToProps = ({reviews}) => ({reviews})
- 
 
     const mapDispatchToProps = dispatch => {
       return {
