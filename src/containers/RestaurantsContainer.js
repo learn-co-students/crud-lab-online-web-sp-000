@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import RestaurantInput from '../components/restaurants/RestaurantInput'
 import Restaurants from '../components/restaurants/Restaurants'
 
@@ -8,10 +9,21 @@ class RestaurantsContainer extends Component {
     return (
       <div>
         <RestaurantInput />
-        <Restaurants />
+        <Restaurants restaurants={this.props.restaurants}/>
       </div>
     )
   }
 }
 
-export default RestaurantsContainer
+const mapStateToProps = ({restaurants}) => {
+  ({restaurants})
+}
+
+const mapDispatchToProps = dispatch => {
+  return {addRestaurant: formData => {
+      restaurants: [...this.state.restaurants, formData]
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantsContainer)
