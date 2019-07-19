@@ -16,7 +16,7 @@ class RestaurantsContainer extends Component {
 }
 
 const mapStateToProps = ({restaurants}) => {
-  ({restaurants})
+  return ({restaurants})
 }
 
 const mapDispatchToProps = dispatch => {

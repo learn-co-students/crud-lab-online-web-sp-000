@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import {addRestaurant} from '../containers/RestaurantsContainer'
 
 class RestaurantInput extends Component {
   constructor(){
@@ -40,4 +38,4 @@ class RestaurantInput extends Component {
   }
 };
 
-export default connect(null, {addRestaurant})(RestaurantInput);
+export default RestaurantInput;
