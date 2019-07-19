@@ -11,7 +11,7 @@ export default function manageRestaurant(state = {restaurants: []}, action){
         id: cuid(),
         name: action.payload.name
       }
-      return {}
+      return this.props.addRestaurant(restaurant)
 
     default:
       return state

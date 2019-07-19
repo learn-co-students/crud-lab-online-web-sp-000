@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import {addRestaurant} from '../containers/RestaurantsContainer'
 
 class RestaurantInput extends Component {
   constructor(){
@@ -18,7 +20,7 @@ class RestaurantInput extends Component {
   handleSubmit = event => {
     event.preventDefault()
 
-    //connect form to reducer
+    this.props.addRestaurant(this.state.name)
 
     this.setState({
       name: ''
@@ -38,4 +40,4 @@ class RestaurantInput extends Component {
   }
 };
 
-export default RestaurantInput;
+export default connect(null, {addRestaurant})(RestaurantInput);
