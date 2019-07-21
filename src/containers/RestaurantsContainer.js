@@ -8,8 +8,8 @@ class RestaurantsContainer extends Component {
   render() {
     return (
       <div>
-        <RestaurantInput addRestaurant={this.props.addRestaurant}/>
-        <Restaurants restaurants={this.props.restaurants}/>
+        <RestaurantInput dispatch={this.props.dispatch}/>
+        <Restaurants restaurants={this.props.restaurants} dispatch={this.props.dispatch}/>
       </div>
     )
   }
@@ -19,11 +19,12 @@ const mapStateToProps = ({restaurants}) => {
   return ({restaurants})
 }
 
-const mapDispatchToProps = dispatch => {
-  return {addRestaurant: formData => {
-      restaurants: [...this.state.restaurants, formData]
-    }
-  }
-}
+//For a cleaner props experience, I deleted this bc I can just pass down dispatch as props and perform the action directly in the onSubmit or onClick callback on the <RestaurantInput /> and <Restaurant /> components.
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addRestaurant: text => dispatch({type: 'ADD_RESTAURANT', text}),
+//     deleteRestaurant: id => dispatch({type: 'DELETE_RESTAURANT', id})
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantsContainer)
+export default connect(mapStateToProps)(RestaurantsContainer)
