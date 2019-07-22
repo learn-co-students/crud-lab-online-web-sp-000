@@ -1,3 +1,5 @@
+//PRO TIP: in each reducer file you look at how you set up the structure of the state, and then you need to return an object that reflects that. The issues with states of restaurant/reviews overwriting each other in the delete actions is one of the reasons to do separate reducers.
+
 import cuid from 'cuid'
 export const cuidFn = cuid
 
@@ -17,10 +19,10 @@ export default function manageRestaurant(state = {restaurants: [], reviews: []},
 
       return {...state, restaurants: [...state.restaurants, restaurant]}
 
-      //update the restaurants array to display every restaurant except the one whose id matches the id of the one we just deleted
+      //update the restaurants array to display every restaurant except the one whose id matches the id of the one we just deleted. Since both restaurants and reviews reducers are in the same file, you need to return a copy of whatever state already is or restaurants/reviews will overwrite one another. Same is done on DELETE_REVIEW below.
       case 'DELETE_RESTAURANT':
         const restaurants = state.restaurants.filter(restaurant => restaurant.id !== action.id)
-        return { restaurants }
+        return { ...state, restaurants }
 
         //since reviews are associated with a restaurantId, we incl the latter as a property of review. Review is a property of the form action (submit) and is called by action.review. Since cuid is already invoked above upon the addition of a restaurant, we set it to a const here and then invoke the const.
       case 'ADD_REVIEW':
