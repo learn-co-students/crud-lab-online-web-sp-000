@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Review extends Component {
 
   render() {
-
+    
     const { review } = this.props
     
     return (
@@ -11,7 +11,7 @@ class Review extends Component {
         <li>
           {review.text}
         </li>
-        <button> X </button>
+        <button onClick={() => this.props.delete({id: review.id, restaurantID: review.restaurantID})}> X </button>
       </div>
     );
   }
