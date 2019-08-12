@@ -1,13 +1,14 @@
 
 import cuid from 'cuid';
 export const cuidFn = cuid;
-
+// {type: 'ADD_RESTAURANT', text: "Muzarella"}
 export default function manageRestaurants(state={restaurants: []}, action) {
     switch (action.type) {
         case 'ADD_RESTAURANT':
+            console.log("myData type in reducer", state)
             const restaurant = {
                 id: cuid(),
-                text: action.payload.text,
+                text: action.text,
                 review: []
             }
     

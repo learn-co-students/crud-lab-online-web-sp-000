@@ -5,7 +5,7 @@ class Review extends Component {
   render() {
     
     const { review } = this.props
-    
+    console.log(review.text)
     return (
       <div>
         <li>
