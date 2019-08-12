@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class Review extends Component {
 
   render() {
-    const { review } = this.props
 
+    const { review } = this.props
+    
     return (
       <div>
         <li>
