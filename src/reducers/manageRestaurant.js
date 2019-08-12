@@ -16,7 +16,8 @@ export default function manageRestaurants(state={restaurants: []}, action) {
             return {...state, restaurants: state.restaurants.filter(restaurant => restaurant.id !== action.payload)}
         case 'ADD_REVIEW':
             const reviewIndex = state.restaurants.findIndex( restaurant => restaurant.id === action.payload.id)
-            return {restaurant: [...state.restaurants.slice(0,reviewIndex), Object.assign({}, state.restaurants[reviewIndex], {review: [...state.restaurants[reviewIndex].review, action.payload.text]})]}
+            console.log({restaurants: [...state.restaurants.slice(0,reviewIndex), Object.assign({}, state.restaurants[reviewIndex], {review: [...state.restaurants[reviewIndex].review, action.payload.text]})]})
+            return {restaurants: [...state.restaurants.slice(0,reviewIndex), Object.assign({}, state.restaurants[reviewIndex], {review: [...state.restaurants[reviewIndex].review, action.payload.text]})]}
         default:
             return state;
     }
