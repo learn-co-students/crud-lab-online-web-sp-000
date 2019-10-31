@@ -15,7 +15,7 @@
     "mocha": "^5.2.0",
     "react-scripts": "1.1.4",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.2"
+    "webpack-dev-server": "^2.11.5"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -28,16 +28,19 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "mocha-multi": "^1.0.1",
-    "react": "^16.4.1",
+    "react": "^16.8.3",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.8",
     "sinon": "^6.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "mocha -w test/helpers/browser.js test/*.js",
+    "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --display-error-details --display-cached --content-base ./",
+    "test:watch": "npm run test -- --watch",
     "eject": "react-scripts eject"
   }
 }
