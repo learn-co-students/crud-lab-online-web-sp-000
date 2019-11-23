@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
-import Review from './Review';
+import React from "react";
+import Review from "./Review";
 
-class Reviews extends Component {
-  render() {
-    return (
-      <ul>
-        Reviews
-      </ul>
-    );
-  }
-};
+const Reviews = props => (
+	<ul>
+		{props.reviews.map(review => <Review key={review.id} deleteReview={props.deleteReview} review={review} />)}
+	</ul>
+)
 
-export default Reviews;
+export default Reviews
