@@ -13,6 +13,8 @@ class ReviewInput extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    // pass in restaurantId to associate with review
+    // and text as an object to reducer via dispatched action
     this.props.addReview({
       restaurantId: this.props.restaurantId,
       text: this.state.text

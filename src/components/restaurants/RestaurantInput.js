@@ -13,6 +13,7 @@ class RestaurantInput extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    // pass in state to reducer via dispatched action
     this.props.addRestaurant(this.state);
     this.setState({
       text: ''

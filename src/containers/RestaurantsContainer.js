@@ -17,10 +17,12 @@ class RestaurantsContainer extends Component {
   }
 }
 
+// extract restaurants data
 const mapStateToProps = (state) => ({
   restaurants: state.restaurants
 });
 
+// dispatch restaurant actions
 const mapDispatchToProps = (dispatch) => ({
   addRestaurant: (text) => dispatch({ type: 'ADD_RESTAURANT', text }),
   deleteRestaurant: (id) => dispatch({ type: 'DELETE_RESTAURANT', id })

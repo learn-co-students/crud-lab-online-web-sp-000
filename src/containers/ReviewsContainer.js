@@ -11,18 +11,25 @@ class ReviewsContainer extends Component {
           restaurantId={this.props.restaurant.id}
           addReview={this.props.addReview}
         />
-        <Reviews reviews={this.props.reviews} />
+        <Reviews
+          restaurantId={this.props.restaurant.id}
+          reviews={this.props.reviews}
+          deleteReview={this.props.deleteReview}
+        />
       </div>
     );
   }
 }
 
+// extract reviews data
 const mapStateToProps = (state) => ({
   reviews: state.reviews
 });
 
+// dispatch review action
 const mapDispatchToProps = (dispatch) => ({
-  addReview: (payload) => dispatch({ type: 'ADD_REVIEW', payload })
+  addReview: (review) => dispatch({ type: 'ADD_REVIEW', review }),
+  deleteReview: (id) => dispatch({ type: 'DELETE_REVIEW', id })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewsContainer);
