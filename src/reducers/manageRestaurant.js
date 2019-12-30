@@ -33,6 +33,8 @@ export default function manageRestaurants(
       };
       // return new state object of reviews
       return { ...state, reviews: [...state.reviews, review] };
+    case 'EDIT_REVIEW':
+      console.log('update:', action);
     case 'DELETE_REVIEW':
       // filter through array of reviews and
       // return reviews that haven't been deleted yet

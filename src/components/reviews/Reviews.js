@@ -16,6 +16,7 @@ class Reviews extends Component {
             key={review.id}
             review={review}
             deleteReview={this.props.deleteReview}
+            editReview={this.props.editReview}
           />
         ))}
       </ul>
