@@ -1,25 +1,57 @@
 import React, { Component } from 'react';
 
 class Review extends Component {
-  state = {
-    isEditing: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      isEditing: false,
+      text: props.review.text
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      text: e.target.value
+    });
+  };
+
+  toggleEdit = () => {
+    this.setState({
+      isEditing: true
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.editReview({
+      id: this.props.review.id,
+      text: this.state.text
+    });
+    this.setState({
+      isEditing: false
+    });
   };
 
   render() {
-    const { review, deleteReview, editReview } = this.props;
-    // when i click on the update button, an input box should appear
-    // around the review i'm trying to edit.
+    const { review, deleteReview } = this.props;
     return (
       <div>
         {this.state.isEditing ? (
-          <input type='text' value={review.text} />
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type='text'
+              value={this.state.text}
+              onChange={this.handleChange}
+            />
+            <input type='submit' />
+          </form>
         ) : (
-          <li>{review.text}</li>
+          <li>
+            {review.text}
+            <button onClick={this.toggleEdit}>Edit Review</button>
+            <button onClick={() => deleteReview(review.id)}> X </button>
+          </li>
         )}
-        <button onClick={() => deleteReview(review.id)}> X </button>
-        <button onClick={() => this.setState({ isEditing: true })}>
-          Update Review
-        </button>
       </div>
     );
   }
