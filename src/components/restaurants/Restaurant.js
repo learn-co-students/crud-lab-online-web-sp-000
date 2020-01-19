@@ -9,7 +9,7 @@ class Restaurant extends Component {
 
     return (
       <div>
-        <li>
+        <li key={this.props.restaurant.text}>
           {restaurant.text}
           <button> X </button>
           <ReviewsContainer restaurant={restaurant}/>
