@@ -3,15 +3,14 @@ import ReviewsContainer from '../../containers/ReviewsContainer'
 
 class Restaurant extends Component {
 
-
   render() {
-    const { restaurant } = this.props;
+    const { restaurant, deleteRestaurant } = this.props;
 
     return (
       <div>
-        <li key={this.props.restaurant.text}>
+        <li key={restaurant.text}>
           {restaurant.text}
-          <button> X </button>
+          <button onClick={() => deleteRestaurant(restaurant.id)}> X </button>
           <ReviewsContainer restaurant={restaurant}/>
         </li>
       </div>
