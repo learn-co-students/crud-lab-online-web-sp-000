@@ -22,3 +22,5 @@ class Restaurants extends Component {
     );
   }
 };
+
+export default Restaurants;
