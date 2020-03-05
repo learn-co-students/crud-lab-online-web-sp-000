@@ -8,7 +8,7 @@ class Review extends Component {
 
   render() {
     const { review } = this.props
-
+ 
     return (
       <div>
         <li>
