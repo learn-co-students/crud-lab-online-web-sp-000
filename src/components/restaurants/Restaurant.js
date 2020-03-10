@@ -5,13 +5,12 @@ class Restaurant extends Component {
 
 
   render() {
-    const { restaurant } = this.props;
-
+    const restaurant = this.props.restaurant
     return (
       <div>
         <li>
           {restaurant.text}
-          <button> X </button>
+          <button onClick={() => this.props.delete(restaurant.id)}>Delete Restaurant</button>
           <ReviewsContainer restaurant={restaurant}/>
         </li>
       </div>
