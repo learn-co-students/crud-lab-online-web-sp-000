@@ -6,7 +6,22 @@ class Restaurants extends Component {
     render() {
         const { restaurants, deleteRestaurant } = this.props;
 
-        const restaurantList = restaurants && restaurants.map(rest => <Restaurant key={rest.id} restaurant={rest} deleteRestaurant={deleteRestaurant} />)
+        // first attempt:
+        // const restaurantList = restaurants.map(restaurant => <Restaurant key={rest.id} restaurant={restaurant} deleteRestaurant={deleteRestaurant} />)
+
+        // AAQ solution: also suggested `defaultProps`
+        // const restaurantList = restaurants && restaurants.map(restaurant => <Restaurant key={rest.id} restaurant={restaurant} deleteRestaurant={deleteRestaurant} />)
+
+        // github solution:
+        const restaurantList = restaurants.map(restaurant => {
+            return (
+                <Restaurant
+                    key={restaurant.id}
+                    restaurant={restaurant}
+                    deleteRestaurant={deleteRestaurant}
+                />
+            )
+        });
 
         return(
         <ul>

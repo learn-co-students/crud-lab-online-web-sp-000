@@ -5,13 +5,14 @@ class Reviews extends Component {
     render() {
         const { reviews, restaurantId, deleteReview } = this.props
         const associatedReviews = reviews.filter(review => review.restaurantId === restaurantId)
-        const restaurantReviews = associatedReviews.map((rev, idx) => {
-            return <Review key={idx} review={rev} deleteReview={deleteReview} />
+
+        const reviewList = associatedReviews.map((review, index) => {
+            return <Review key={index} review={review} deleteReview={deleteReview} />
         })
 
         return (
         <ul>
-            { restaurantReviews }
+            { reviewList }
         </ul>
         );
     }
