@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-/* code change */
 import Restaurant from './Restaurant'
 
 class Restaurants extends Component {
@@ -7,16 +6,7 @@ class Restaurants extends Component {
     render() {
         const { restaurants, deleteRestaurant } = this.props;
 
-        const restaurantList = restaurants.map(rest => <Restaurant key={rest.id} restaurant={rest} deleteRestaurant={deleteRestaurant} />)
-        // const restaurantList = restaurants.map(restaurant => {
-        //     return (
-        //         <Restaurant
-        //             key={restaurant.id}
-        //             restaurant={restaurant}
-        //             deleteRestaurant={deleteRestaurant}
-        //         />
-        //     )
-        // });
+        const restaurantList = restaurants && restaurants.map(rest => <Restaurant key={rest.id} restaurant={rest} deleteRestaurant={deleteRestaurant} />)
 
         return(
         <ul>
