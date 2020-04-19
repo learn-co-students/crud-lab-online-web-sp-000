@@ -6,10 +6,16 @@ class ReviewInput extends Component {
     text: ""
   }
 
+  handleOnChange(event) {
+    this.setState({
+      text: event.target.value
+    })
+  }
+
   render() {
     return (
       <div>
-        <input type="text" />
+        <input type="text" onChange={event => this.handleOnChange(event)}/>
         <input type="button" />
       </div>
     );
