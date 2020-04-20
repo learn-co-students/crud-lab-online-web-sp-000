@@ -7,7 +7,6 @@ class RestaurantInput extends Component {
   }
  
   handleOnChange(event) {
-
     this.setState({
       text: event.target.value
     })

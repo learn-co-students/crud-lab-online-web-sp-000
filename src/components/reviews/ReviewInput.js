@@ -14,12 +14,11 @@ class ReviewInput extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
+   
     this.props.addReview(this.state.text, this.props.restaurantId)
     this.setState({
       text: ""
     })
-    
-    
   }
 
   render() {
@@ -35,7 +34,6 @@ class ReviewInput extends Component {
             value="Add Review" 
           />
         </form>
-        
       </div>
     );
   }
