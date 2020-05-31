@@ -3,9 +3,11 @@ import Review from './Review';
 
 class Reviews extends Component {
   render() {
+    const reviews = this.props.reviews.map(r => <Review review={r} key={r.id} deleteReview={this.props.deleteReview}/>)
+
     return (
       <ul>
-        Reviews
+        {reviews}
       </ul>
     );
   }
