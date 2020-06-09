@@ -84,7 +84,8 @@ describe('ReviewInput Component', () => {
     const wrapper = mount(<Provider store={store}><App /></Provider>);
 
     let review = wrapper.find(ReviewInput);
-
+    console.log("HIIIIIIIIIIIIIIIIIIII")
+    console.log(review.props())
     expect(review.props().restaurantId).to.equal(store.getState().restaurants[0].id);
   });
 
