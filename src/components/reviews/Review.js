@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Review extends Component {
+class Review extends Component { 
 
   render() {
     const { review } = this.props
@@ -10,7 +10,7 @@ class Review extends Component {
         <li>
           {review.text}
         </li>
-        <button> X </button>
+        <button onClick={() => this.props.deleteReview(review.id)}> X </button>
       </div>
     );
   }
