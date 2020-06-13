@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 class RestaurantInput extends Component {
+  constructor(props) {
+    super(props)
 
-  state = {text: ''}
+    this.state = {text: ''}
+  }
 
   handleChange = event => {
     this.setState({text: event.target.value})
@@ -11,7 +13,9 @@ class RestaurantInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.dispatch({ type: 'ADD_RESTAURANT', payload: this.state });
+//debugger;
+    this.props.addRestaurant(this.state.text);
+    this.setState({text: ''})
   }
 
   render() {
@@ -20,6 +24,7 @@ class RestaurantInput extends Component {
         <form onSubmit={event => this.handleSubmit(event)}>
         Restaurant Input
           <input type='text' value={this.state.text} onChange={event => this.handleChange(event)}/>
+          <input type='submit'/>
         </form>
       </div>
     );
@@ -27,23 +32,4 @@ class RestaurantInput extends Component {
 };
 
 
-export default connect(null, null)(RestaurantInput);
-//export default (RestaurantInput);
-
-
-
-
-// render() {
-//   return (
-//     <div>
-//       <form>
-//         <p>
-//           <label>Reastaurant</label>
-//           <input type="text"/>
-//         </p>
-//         <input type="submit"/>
-//       </form>
-//     </div>
-//   );
-// }
-// };
+export default RestaurantInput;
