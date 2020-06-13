@@ -1,8 +1,12 @@
-import React, { Component } from 'react'
-import RestaurantInput from '../components/restaurants/RestaurantInput'
-import Restaurants from '../components/restaurants/Restaurants'
+import React, { Component } from 'react';
+import RestaurantInput from '../components/restaurants/RestaurantInput';
+import Restaurants from '../components/restaurants/Restaurants';
+
+import { connect } from 'react-redux'; //
 
 class RestaurantsContainer extends Component {
+
+
 
   render() {
     return (
@@ -14,4 +18,16 @@ class RestaurantsContainer extends Component {
   }
 }
 
-export default RestaurantsContainer
+  const mapStateToProps = state => {
+    return {
+      
+    }
+  }
+
+  const mapDispatchToProps = dispatch => {
+    return {
+
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantsContainer);
