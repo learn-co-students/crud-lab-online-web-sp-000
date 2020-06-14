@@ -1,29 +1,75 @@
+// import React, { Component } from 'react';
+// //import Reviews from './Reviews';
+//
+// class ReviewInput extends Component {
+//
+//   state = {text: ''}
+//
+//
+//   handleChange = event => {
+//     this.setState({text: event.target.value})
+//   }
+//
+//
+//   handleSubmit = event => {
+//     event.preventDefault();
+//     this.props.addReview({text: this.state.text, restaurantId: this.props.restaurantId});
+//     this.setState({text: ''});
+//   }
+//
+//
+//   render() {
+//     return (
+//       <div>
+//         <form onSubmit={this.handleSubmit}>
+//         Review Input
+//           <input type='text' value={this.state.text} onChange={this.handleChange}/>
+//           <input type='submit'/>
+//         </form>
+//       </div>
+//     );
+//   }
+// };
+//
+// export default ReviewInput;
+
+
+
+
+
+
 import React, { Component } from 'react';
-import Reviews from './Reviews';
 
 class ReviewInput extends Component {
 
-  state = {text: ''}
-
-  handleChange = event => {
-    this.setState({text: event.target.value})
+  state = {
+    text: ''
   }
 
+  handleOnChange = event => {
+    this.setState({
+      text: event.target.value,
+    });
+  }
 
-  handleSubmit = event => {
+  handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addReview(this.state.text);
-    this.setState({text: ''});
+    this.props.addReview({text: this.state.text, restaurantId: this.props.restaurantId });
+    this.setState({
+      text: '',
+    });
   }
-
 
   render() {
     return (
-      <div>
-        <form>
-        Review Input
-          <input type='text' value={this.state.text} onChange={event => this.handleChange(event)}/>
-          <input type='submit' onSubmit={event => this.handleSubmit(event)}/>
+     <div>
+        <form onSubmit={this.handleOnSubmit} >
+          <label>Add Review</label>
+          <input
+            type="text"
+            value={this.state.text}
+            onChange={this.handleOnChange} />
+          <input type="submit" />
         </form>
       </div>
     );
