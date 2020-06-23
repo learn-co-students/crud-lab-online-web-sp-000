@@ -56,6 +56,7 @@ describe('Restaurants Component', () => {
     store.dispatch({type: 'ADD_RESTAURANT', text: "Artichoke"})
     store.dispatch({type: 'ADD_RESTAURANT', text: "Two Brothers"})
     const wrapper = mount(<Provider store={store}><App /></Provider>)
+    // console.log(wrapper.find(Restaurant))
     expect(wrapper.find(Restaurant)).to.have.length(3);
   });
 });
@@ -123,9 +124,9 @@ describe('Restaurant Component with Redux', () => {
     const wrapper = mount(<Provider store={store}><App /></Provider>)
 
     let deleteButton = wrapper.find('button').first();
-
+    // NEED TO FIGURE OUT WHY DELETE IS NOT WORKING FOR THE TEST
     deleteButton.simulate('click',  { preventDefault() {} });
-
+    // console.log(store.getState());
     expect(store.getState().restaurants.length).to.equal(0);
 
 
