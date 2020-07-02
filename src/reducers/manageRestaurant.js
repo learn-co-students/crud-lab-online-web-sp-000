@@ -16,15 +16,20 @@ switch(action.type) {
             id: cuidFn(),
             text: action.text
         }
-    return {
+
+        return {
         ...state,
         restaurants:[...state.restaurants, restaurantObject]}
+
     case 'DELETE_RESTAURANT':
+
         return {
             ...state,
             restaurants: state.restaurants.filter(restaurant => restaurant.id !== action.id)}
+    
     case 'ADD_REVIEWS':
-         console.log('ID for Review',action)
+
+         
         const reviewsObject = {
             id: cuidFn(),
             text: action.text,
@@ -34,6 +39,14 @@ switch(action.type) {
             ...state,
             reviews:[...state.reviews, reviewsObject]}
     
+            case 'DELETE_REVIEW' :
+                console.log(' Delete ID for Review',action)
+                return {
+                    ...state,
+                    reviews: state.restaurants.filter(review => review.id !== action.id)
+                }
+
+
    default: return state 
 }
 
