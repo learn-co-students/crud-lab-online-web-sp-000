@@ -6,7 +6,7 @@ class Restaurants extends Component {
   render() {
 
     let allRestaurants = this.props.restaurants.map((restaurant) => {
-      return( <Restaurant restaurant={restaurant} delete={this.props.deleteRestaurant} key={restaurant.id}/> ) 
+      return( <Restaurant restaurant={restaurant} deleteRestaurant={this.props.deleteRestaurant} key={restaurant.id}/> ) 
     })
 
 

@@ -22,14 +22,14 @@ switch(action.type) {
         restaurants:[...state.restaurants, restaurantObject]}
 
     case 'DELETE_RESTAURANT':
-
+        console.log(' Delete Restaurant',action)
         return {
             ...state,
             restaurants: state.restaurants.filter(restaurant => restaurant.id !== action.id)}
     
     case 'ADD_REVIEWS':
 
-         
+        console.log('Add',action)
         const reviewsObject = {
             id: cuidFn(),
             text: action.text.text,
@@ -43,7 +43,7 @@ switch(action.type) {
                 console.log(' Delete ID for Review',action)
                 return {
                     ...state,
-                    reviews: state.restaurants.filter(review => review.id !== action.id)
+                    reviews: state.reviews.filter(review => review.id !== action.id)
                 }
 
 
