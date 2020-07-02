@@ -32,8 +32,8 @@ switch(action.type) {
          
         const reviewsObject = {
             id: cuidFn(),
-            text: action.text,
-            restaurantId: action.restaurantId
+            text: action.text.text,
+            restaurantId: action.text.restaurantId
         }
         return {
             ...state,
