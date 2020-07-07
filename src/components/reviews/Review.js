@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 
 class Review extends Component {
+  
+  handleDelete = event => {
+    event.preventDefault()
+    this.props.dispatch({type: 'DELETE_REVIEW', id: this.props.review.id})
+  }
 
   render() {
     const { review } = this.props
@@ -10,11 +16,15 @@ class Review extends Component {
         <li>
           {review.text}
         </li>
-        <button> X </button>
+        <button onClick={this.handleDelete}> X </button>
       </div>
     );
   }
 
 };
 
-export default Review;
+const mapStateToProps = state => {
+  return state
+}
+
+export default connect(mapStateToProps)(Review);
