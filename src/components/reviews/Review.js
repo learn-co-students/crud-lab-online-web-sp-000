@@ -8,9 +8,9 @@ class Review extends Component {
     return (
       <div>
         <li>
-          {review.text}
+          {this.props.text}
         </li>
-        <button> X </button>
+        <button onClick={() => this.props.deleteReview(this.props.id, this.props.restaurantId)}> X </button>
       </div>
     );
   }
