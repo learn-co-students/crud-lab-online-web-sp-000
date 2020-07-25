@@ -22,23 +22,26 @@ export default function manageRestaurants(state = {
 
 
         case 'ADD_REVIEW':
-            
-            let review;
-
-           if(action.review){ 
-                review = {
-                    id: cuidFn(),
-                    text: action.review.text,
-                    restaurantId: action.review.restaurantId
-                }
+            let review = {
+                id: cuidFn(),
+                text: action.review.text,
+                restaurantId: action.review.restaurantId
+           
             }
-            else {
-                review = {
-                    id: cuidFn(),
-                    text: action.text,
-                    restaurantId: action.restaurantId
-                }
-            }
+        //    if(action.review){ 
+        //         review = {
+        //             id: cuidFn(),
+        //             text: action.review.text,
+        //             restaurantId: action.review.restaurantId
+        //         }
+        //     }
+        //     else {
+        //         review = {
+        //             id: cuidFn(),
+        //             text: action.text,
+        //             restaurantId: action.restaurantId
+        //         }
+        //     }
             return {...state, reviews: [...state.reviews, review]}
 
         default: 

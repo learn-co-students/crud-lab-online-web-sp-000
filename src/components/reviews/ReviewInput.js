@@ -14,9 +14,13 @@ class ReviewInput extends Component {
   }
 
   onSubmit = (event) => {
-    event.preventDefault()
-    this.props.review(this.state)
    
+    event.preventDefault();
+    this.props.review({text: this.state.text, restaurantId: this.props.restaurantId })
+    this.setState({
+      text: ''
+    });
+
   }
 
   render() {
@@ -24,7 +28,7 @@ class ReviewInput extends Component {
       <div>
         <form onSubmit={this.onSubmit}>
           <label>Review</label>
-          <input onChange={this.textChange} type="text"/>
+          <input onChange={this.textChange} type="text" value={this.state.text}/>
           <input type="submit"/>
         </form>
       </div>
