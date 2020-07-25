@@ -13,10 +13,14 @@ class ReviewInput extends Component {
     })
   }
 
+  onSubmit = (event) => {
+    event.preventDefault()
+  }
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <label>Review</label>
           <input onChange={this.textChange} type="text"/>
           <input type="submit"/>
