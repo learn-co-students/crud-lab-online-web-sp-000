@@ -15,6 +15,8 @@ class ReviewInput extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
+    this.props.review(this.state)
+   
   }
 
   render() {

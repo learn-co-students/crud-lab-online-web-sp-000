@@ -3,7 +3,7 @@ import cuid from 'cuid';
 export const cuidFn = cuid;
 
 export default function manageRestaurants(state = {
-    restaurants: [] 
+    restaurants: [], reviews: [] 
 }, action) {
 
     switch(action.type){
@@ -20,6 +20,26 @@ export default function manageRestaurants(state = {
         case 'DELETE_RESTAURANT':
         return { restaurants: state.restaurants.filter(restaurant => restaurant.id !== action.restaurant.id)}
 
+
+        case 'ADD_REVIEW':
+            
+            let review;
+
+           if(action.review){ 
+                review = {
+                    id: cuidFn(),
+                    text: action.review.text,
+                    restaurantId: action.review.restaurantId
+                }
+            }
+            else {
+                review = {
+                    id: cuidFn(),
+                    text: action.text,
+                    restaurantId: action.restaurantId
+                }
+            }
+            return {...state, reviews: [...state.reviews, review]}
 
         default: 
         return state 
