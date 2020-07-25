@@ -9,14 +9,13 @@ class RestaurantsContainer extends Component {
     return (
       <div>
         <RestaurantInput add={this.props.addRestaurant} />
-        <Restaurants texts={this.props.texts} />
+        <Restaurants restaurants={this.props.restaurants} />
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.restaurants)
   return  {
     restaurants: state.restaurants
   }
