@@ -6,7 +6,7 @@ class Reviews extends Component {
 
 
     const sortedReviews = this.props.reviews.filter(review=>review.restaurantId===this.props.restaurantId)
-    const reviewList = sortedReviews.map(review=> {return <Review review={review} key={review.id}/>})
+    const reviewList = sortedReviews.map(review=> {return <Review review={review} key={review.id} deleteReview={this.props.deleteReview}/>})
     return (
       <ul>
         {reviewList}

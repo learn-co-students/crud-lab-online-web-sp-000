@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 class Review extends Component {
 
+  handleOnClick = () => {
+    this.props.deleteReview(this.props.review.id)
+  }
+
   render() {
 
     return (
@@ -9,7 +13,7 @@ class Review extends Component {
         <li>
           {this.props.review.text}
         </li>
-        <button> X </button>
+        <button onClick={this.handleOnClick}> X </button>
       </div>
     );
   }
