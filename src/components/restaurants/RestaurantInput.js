@@ -1,31 +1,37 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { addRestaurant } from "../../actions/restaurants";
 
 class RestaurantInput extends Component {
 
-  state = {
-    text: '',
-  }
+  constructor(props) {
+    super(props);
 
-  changeHandler = event => {
+    this.state = {
+      text: ''
+    };
+  };
+
+  handleOnChange(event) {
     this.setState({
-      text: event.target.value
-    })
+      text: event.target.value,
+    });
   }
 
-  submitHandler = event => {
+  handleOnSubmit(event) {
     event.preventDefault();
-    // this.props.dispatch(addRestaurant)
-    console.log(this.props, this.state)
-    this.setState({name: ''})
+    this.props.addRestaurant(this.state.text)
+    this.setState({
+      text: ''
+    });
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.submitHandler}>
-          <input type="text" onChange={this.changeHandler} value={this.state.text} />
+        <form onSubmit={(event) => this.handleOnSubmit(event)} >
+          <input
+            type="text"
+            value={this.state.text}
+            onChange={(event) => this.handleOnChange(event)} />
           <input type="submit" />
         </form>
       </div>
@@ -33,4 +39,4 @@ class RestaurantInput extends Component {
   }
 };
 
-export default connect(null, { addRestaurant })(RestaurantInput);
+export default RestaurantInput;
