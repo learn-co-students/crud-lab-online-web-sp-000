@@ -22,11 +22,16 @@ export default function manageRestaurants (
         reviews: [
           ...state.reviews,
           {
-            text: action.payload.text,
+            text: action.review.text,
             id: cuid(),
-            restaurantID: action.payload.restaurantID
+            restaurantId: action.review.restaurantId
           }
         ]
+      }
+    case 'DELETE_REVIEW':
+      return {
+        ...state,
+        reviews: state.reviews.filter(r => r.id !== action.id)
       }
     default:
       return state

@@ -12,7 +12,9 @@ class ReviewsContainer extends Component {
           restaurantId={this.props.restaurant.id}
         />
         <Reviews
-          reviews={this.props.reviews}
+          reviews={this.props.reviews.filter(
+            r => r.restaurantId === this.props.restaurant.id
+          )}
           deleteReview={this.props.deleteReview}
         />
       </div>
@@ -22,8 +24,8 @@ class ReviewsContainer extends Component {
 
 const msp = state => ({ reviews: state.reviews })
 const mdp = d => ({
-  addReview: payload => d({ type: 'ADD_REVIEW', payload }),
-  deleteReview: payload => d({ type: 'DELETE_REVIEW', payload })
+  addReview: review => d({ type: 'ADD_REVIEW', review }),
+  deleteReview: id => d({ type: 'DELETE_REVIEW', id })
 })
 
 export default connect(msp, mdp)(ReviewsContainer)
