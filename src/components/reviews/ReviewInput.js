@@ -26,6 +26,7 @@ class ReviewInput extends Component {
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <input
           type="text"
+          name="text"
           value={this.props.text}
           onChange={(event) => this.handleOnChange(event)} />
           <input type="submit" />
