@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import ReviewInput from '../components/reviews/ReviewInput'
 import Reviews from '../components/reviews/Reviews'
 import { connect } from 'react-redux'
-import {
-  addReview,
-  deleteReview
-} from '../actions'
+import { addReview } from '../actions/addReview'
+import { deleteReview } from '../actions/deleteReview'
 
 class ReviewsContainer extends Component {
 
