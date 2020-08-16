@@ -19,7 +19,6 @@ export function manageRestaurants(state = [], action) {
 export function manageReviews(state = [], action) {
     
     switch(action.type){
-
         case "ADD_REVIEW":
             return [...state, {...action.payload, id: cuid() }]
             
