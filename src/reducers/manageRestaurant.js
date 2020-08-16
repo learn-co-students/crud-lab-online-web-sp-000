@@ -2,20 +2,13 @@ import { combineReducers } from 'redux';
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
-export function manageRestaurants(state = {
-    restaurants: []
-}, action) {
+export function manageRestaurants(state = [], action) {
     switch (action.type) {
-        case 'ADD_RESTAURANT':
+        case "ADD_RESTAURANT":
+            return [...state, {text: action.payload, id: cuid() }]
 
-            return {...state, restaurants: [...state.restaurants, {
-                id: cuid(),
-                text: action.text
-            }]}
-
-        case 'DELETE_RESTAURANT':
-
-            return {...state, restaurants: [...state.restaurants.filter(r => r.id !== action.id)]}
+        case "DELETE_RESTAURANT":
+            return state.filter(res => res.id !== action.payload)
 
         default:
             return state
@@ -23,9 +16,7 @@ export function manageRestaurants(state = {
 
 }
 
-export function manageReviews(state = {
-    reviews: []
-}, action) {
+export function manageReviews(state = [], action) {
     
     switch(action.type){
 
