@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Review from './Review';
 
 class Reviews extends Component {
