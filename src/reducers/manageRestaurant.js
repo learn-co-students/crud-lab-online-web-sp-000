@@ -5,7 +5,7 @@ export const cuidFn = cuid;
 export function manageRestaurants(state = [], action) {
     switch (action.type) {
         case "ADD_RESTAURANT":
-            return [...state, {text: action.payload, id: cuid() }]
+            return [...state, {text: action.text, id: cuid() }]
 
         case "DELETE_RESTAURANT":
             return state.filter(res => res.id !== action.payload)
@@ -13,14 +13,12 @@ export function manageRestaurants(state = [], action) {
         default:
             return state
     }
-
 }
 
 export function manageReviews(state = [], action) {
-    
     switch(action.type){
         case "ADD_REVIEW":
-            return [...state, {...action.payload, id: cuid() }]
+            return [...state, {...action.review, id: cuid() }]
             
         case "DELETE_REVIEW":
             return state.filter(rev => rev.id !== action.payload)

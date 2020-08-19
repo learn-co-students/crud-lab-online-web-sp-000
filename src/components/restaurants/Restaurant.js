@@ -5,7 +5,7 @@ class Restaurant extends Component {
 
   render() {
     const { restaurant } = this.props;
-
+    console.log(restaurant)
     return(
       <div>
         <li>
