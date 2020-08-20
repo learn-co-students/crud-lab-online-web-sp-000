@@ -9,7 +9,7 @@ class Restaurants extends Component {
       return (
         <Restaurant
             key={restaurant.id}
-            restaurants={restaurant}
+            restaurant={restaurant}
             deleteRestaurant={deleteRestaurant}
         />
       )
