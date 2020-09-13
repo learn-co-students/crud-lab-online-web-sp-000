@@ -5,23 +5,19 @@ class ReviewInput extends Component {
 
   state = {
     text: '',
-    restaurantId: ''
   }
 
   handleOnChange(event) {
-    console.log('* handle change *', this.props.restaurant.id)
     this.setState({
       text: event.target.value,
-      restaurantId: this.props.restaurant.id
     });
   }
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.addReview(this.state.text, this.state.restaurantId);
+    this.props.addReview(this.state.text, this.props.restaurantId);
     this.setState({
       text: '',
-      restaurantId: this.props.restaurant.id
     });
   }
 

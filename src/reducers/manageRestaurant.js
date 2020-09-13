@@ -20,7 +20,7 @@ export default function manageRestaurants(state = {
       return {restaurants: state.restaurants.filter(restaurant => restaurant.id !== action.id)}
   
       case 'ADD_REVIEW':
-        console.log('Stepes on added review:')
+        console.log('Steps on added review:')
       let reviewedRestaurant = state.restaurants.find(restaurant => restaurant.id === action.restaurantId)
         console.log('1- reviewed restaurant', reviewedRestaurant)
       let idx = state.restaurants.findIndex(restaurant => restaurant.id  === action.restaurantId)
@@ -37,13 +37,15 @@ export default function manageRestaurants(state = {
         console.log('5- list of all rest', updatedRestaurants)
       updatedRestaurants[idx] = reviewedRestaurant
         console.log('6- list of all rest with updated one', updatedRestaurants)
-      return { updatedRestaurants }
+      return { restaurants: updatedRestaurants }
 
-  //
-    //  case 'DELETE_REVIEW':
-    //    console.log('delete review', 'state', state, 'action', action)
-    //  let idx = state.restaurants.findIndex(restaurant => restaurant.id  === action.id)
-    //  return {restaurants: state.restaurants.filter(restaurant => restaurant.id !== action.id)}
+      case 'DELETE_REVIEW':
+        console.log('delete review', 'state', state, 'action', action)
+      reviewedRestaurant = state.restaurants.find(restaurant => restaurant.id === action.restaurantId)
+      idx = state.restaurants.findIndex(restaurant => restaurant.id  === action.restaurantId)
+      updatedRestaurants = state.restaurants
+      updatedRestaurants[idx].reviews = reviewedRestaurant.reviews.filter(review => review.id !== action.id)
+      return {restaurants: updatedRestaurants}
 
       default:
       return state;
