@@ -6,6 +6,7 @@ class Reviews extends Component {
     return (
       <ul>
         Reviews
+        {this.props.restaurant.reviews.map (review => <Review key={review.id} review={review} deleteReview={this.props.deleteReview} /> )}
       </ul>
     );
   }
