@@ -21,7 +21,7 @@ export default function manageRestaurants(state = {
   
       case 'ADD_REVIEW':
         console.log('Steps on added review:')
-      let reviewedRestaurant = state.restaurants.find(restaurant => restaurant.id === action.restaurantId)
+      let reviewedRestaurant = Object.assign({}, state.restaurants.find(restaurant => restaurant.id === action.restaurantId) ) 
         console.log('1- reviewed restaurant', reviewedRestaurant)
       let idx = state.restaurants.findIndex(restaurant => restaurant.id  === action.restaurantId)
         console.log('2- index of reviewed restaurant', idx)
@@ -33,7 +33,7 @@ export default function manageRestaurants(state = {
         console.log('3- new review object', review)
       reviewedRestaurant.reviews.push(review)
         console.log('4- updated reviewed restaurant', reviewedRestaurant)
-      let updatedRestaurants = state.restaurants
+      let updatedRestaurants = Object.assign([], state.restaurants)
         console.log('5- list of all rest', updatedRestaurants)
       updatedRestaurants[idx] = reviewedRestaurant
         console.log('6- list of all rest with updated one', updatedRestaurants)
@@ -41,11 +41,11 @@ export default function manageRestaurants(state = {
 
       case 'DELETE_REVIEW':
         console.log('Stepts on deleting review: ', 'state', state, 'action', action)
-      reviewedRestaurant = state.restaurants.find(restaurant => restaurant.id === action.restaurantId)
+      reviewedRestaurant = Object.assign({}, state.restaurants.find(restaurant => restaurant.id === action.restaurantId))
         console.log('1- reviewed restaurant', reviewedRestaurant)
       idx = state.restaurants.findIndex(restaurant => restaurant.id  === action.restaurantId)
         console.log('2- index of reviewed restaurant', idx)
-      updatedRestaurants = state.restaurants
+      updatedRestaurants = Object.assign([], state.restaurants)
         console.log('3- list of all rest', updatedRestaurants)
       updatedRestaurants[idx].reviews = reviewedRestaurant.reviews.filter(review => review.id !== action.id)
         console.log('4- list of all reviews from specific restaurant', updatedRestaurants[idx])
