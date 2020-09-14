@@ -28,8 +28,8 @@ export default function manageRestaurants(state = {
     //    console.log('2- index of reviewed restaurant', idx)
       const review = {
           id: cuid(),
-          text: action.text,
-          restaurantId: action.restaurantId
+          text: action.review.text,
+          restaurantId: action.review.restaurantId
       }
         console.log('3- new review object', review)
     //  reviewedRestaurant.reviews.push(review)
