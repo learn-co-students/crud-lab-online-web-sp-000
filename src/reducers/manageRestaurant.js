@@ -40,11 +40,15 @@ export default function manageRestaurants(state = {
       return { restaurants: updatedRestaurants }
 
       case 'DELETE_REVIEW':
-        console.log('delete review', 'state', state, 'action', action)
+        console.log('Stepts on deleting review: ', 'state', state, 'action', action)
       reviewedRestaurant = state.restaurants.find(restaurant => restaurant.id === action.restaurantId)
+        console.log('1- reviewed restaurant', reviewedRestaurant)
       idx = state.restaurants.findIndex(restaurant => restaurant.id  === action.restaurantId)
+        console.log('2- index of reviewed restaurant', idx)
       updatedRestaurants = state.restaurants
+        console.log('3- list of all rest', updatedRestaurants)
       updatedRestaurants[idx].reviews = reviewedRestaurant.reviews.filter(review => review.id !== action.id)
+        console.log('4- list of all reviews from specific restaurant', updatedRestaurants[idx])
       return {restaurants: updatedRestaurants}
 
       default:

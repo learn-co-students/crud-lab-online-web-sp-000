@@ -10,7 +10,7 @@ class Review extends Component {
         <li>
           {review.text}
         </li>
-        <button onClick={() => this.props.deleteReview(review.id)}> X </button>
+        <button onClick={() => this.props.deleteReview(review.id, review.restaurantId)}> X </button>
       </div>
     );
   }
