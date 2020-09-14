@@ -7,6 +7,7 @@ class Review extends Component {
     console.log('review', this.props)
     return (
       <div>
+        <br></br>
         <li>
           {review.text}
         </li>
