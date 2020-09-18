@@ -1,6 +1,7 @@
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
+//actions for add/delete restaurants, and add/delete reviews
 export default function manageRestaurants(state = {
   restaurants: [],
   reviews: []

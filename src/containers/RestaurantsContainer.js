@@ -4,7 +4,7 @@ import RestaurantInput from '../components/restaurants/RestaurantInput'
 import Restaurants from '../components/restaurants/Restaurants'
 
 class RestaurantsContainer extends Component {
-
+//Container for new restaurants and the corresponding restaurants as well.
   render() {
     return (
       <div>

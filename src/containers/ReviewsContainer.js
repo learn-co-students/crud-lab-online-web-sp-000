@@ -4,8 +4,8 @@ import ReviewInput from '../components/reviews/ReviewInput'
 import Reviews from '../components/reviews/Reviews'
 
 class ReviewsContainer extends Component {
-
-  render() {
+//Container for new reviews for each restaurant and the ability to delete corresponding reviews as well.
+render() {
     return (
       <div>
         <ReviewInput restaurantId={this.props.restaurant.id} addReview={this.props.addReview} />

@@ -5,7 +5,7 @@ class Restaurant extends Component {
 
   render() {
     const { restaurant } = this.props;
-
+      //Nest all reviews under each restaurant, have a delete button to delete restaurant reviews.
     return (
       <div>
         <li>

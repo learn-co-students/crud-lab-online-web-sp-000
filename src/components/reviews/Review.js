@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Review extends Component {
-
+//Render each review and add a delete button
   onClickHandler = () => {
     this.props.deleteReview(this.props.review.id)
   }
