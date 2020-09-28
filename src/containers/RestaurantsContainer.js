@@ -4,6 +4,10 @@ import RestaurantInput from '../components/restaurants/RestaurantInput';
 import Restaurants from '../components/restaurants/Restaurants';
 
 class RestaurantsContainer extends Component {
+  state = {
+
+    text:''
+  }
 
   render() {
     return (
@@ -19,7 +23,7 @@ class RestaurantsContainer extends Component {
 
   
   const mapDispatchToProps = dispatch => ({
-    addRestaurant:name => dispatch ({type: 'ADD_RESTAURANT',name})
+    addRestaurant:text => dispatch ({type: 'ADD_RESTAURANT',text})
     
   }) 
   
