@@ -18,11 +18,6 @@ class RestaurantsContainer extends Component {
  const mapStateToProps = (state) => ({ restaurants: state.restaurants})
 
   
-   
-   
- 
-
-
   const mapDispatchToProps = dispatch => ({
     addRestaurant:name => dispatch ({type: 'ADD_RESTAURANT',name})
     
