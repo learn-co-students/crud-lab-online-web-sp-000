@@ -15,23 +15,29 @@ handleOnChange = (event) => {
 
 handleSubmit = (event) => {
   event.preventDefault()
- this.props.addRestaurant(this.state.text)
-  this.setState({
+ this.props.addRestaurant(this.state.text) 
+ 
+ this.setState({
     text:""
   })
 
 
 }
+handleDelete = (event) => {
+event.preventDefault()
+this.props.delete(this.props.resturant.id)
 
+}
   render() {
+    
     return (
       <div>
       
-        Restaurant Input
+      
 
         <form onSubmit={this.handleSubmit}>
         <label> New Restaurant</label>
-        <input text="" onChange={this.handleOnChange}/><br></br>
+        <input type="text" name="text" value={this.state.text} onChange={this.handleOnChange}/><br></br>
         <input type="submit"/>
       </form>
       </div>

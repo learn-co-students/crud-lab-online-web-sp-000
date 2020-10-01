@@ -3,17 +3,16 @@ import {connect} from 'react-redux'
 import RestaurantInput from '../components/restaurants/RestaurantInput';
 import Restaurants from '../components/restaurants/Restaurants';
 
-class RestaurantsContainer extends Component {
-  state = {
 
-    text:''
-  }
+class RestaurantsContainer extends Component {
+  
 
   render() {
     return (
       <div>
         <RestaurantInput addRestaurant={this.props.addRestaurant} />
-        <Restaurants />
+        <Restaurants restaurants={this.props.restaurants} delete={this.props.delete} />
+      
       </div>
     )
   }
@@ -23,8 +22,8 @@ class RestaurantsContainer extends Component {
 
   
   const mapDispatchToProps = dispatch => ({
-    addRestaurant:text => dispatch ({type: 'ADD_RESTAURANT',text})
-    
+    addRestaurant:text => dispatch ({type: 'ADD_RESTAURANT',text}),
+    delete: id => dispatch({type: 'DELETE_RESTAURANT',id})
   }) 
   
 
