@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Reviews from './Reviews';
 
 class Review extends Component {
 
@@ -7,10 +8,10 @@ class Review extends Component {
 
     return (
       <div>
-        <li>
+        <li key={review.id}>
           {review.text}
         </li>
-        <button> X </button>
+        <button onClick={() => this.props.deleteReview(review.id)}> X </button>
       </div>
     );
   }
