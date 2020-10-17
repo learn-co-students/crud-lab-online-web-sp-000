@@ -7,7 +7,7 @@ class ReviewInput extends Component {
   constructor() {
     super(),
     this.state = {
-      name: ''
+      text: ''
     }
   }
 
@@ -19,6 +19,7 @@ class ReviewInput extends Component {
     event.preventDefault();
     const review = {
       id: cuid(),
+      restaurantId: this.props.restaurant.id,
       text: this.state.text
     }
     this.props.addReview(review);
