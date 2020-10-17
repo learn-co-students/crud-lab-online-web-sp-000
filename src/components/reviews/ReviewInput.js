@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Reviews from './Reviews';
-import cuid from 'cuid';
 
 class ReviewInput extends Component {
 
@@ -18,7 +17,6 @@ class ReviewInput extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const review = {
-      id: cuid(),
       restaurantId: this.props.restaurant.id,
       text: this.state.text
     }
