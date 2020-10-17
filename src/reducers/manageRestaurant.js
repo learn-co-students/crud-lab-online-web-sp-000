@@ -16,7 +16,7 @@ export default function manageRestaurants(state =     {
             return {reviews: state.reviews.filter( review => ( review.resturantId !== action.id )), restaurants: state.restaurants.filter( restaurant => (restaurant.id !== action.id ))}
         case "ADD_REVIEW":
             const review = {
-                text: action.text,
+                text: action.review.text,
                 restaurantId: action.review.restaurantId,
                 id: cuid()
             }
