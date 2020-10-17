@@ -1,11 +1,37 @@
 import React, { Component } from 'react';
 import Reviews from './Reviews';
+import cuid from 'cuid';
 
 class ReviewInput extends Component {
+
+  constructor() {
+    super(),
+    this.state = {
+      name: ''
+    }
+  }
+
+  handleChange = (event) => {
+    this.setState({ text: event.target.value })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const review = {
+      id: cuid(),
+      text: this.state.text
+    }
+    this.props.addReview(review);
+    this.setState({ text: '' });
+  }
+
   render() {
     return (
       <div>
-        Review Input
+          <form onSubmit={this.handleSubmit}>
+          <input type="text" name="name" value={this.state.text} onChange={this.handleChange}></input>
+          <input type="submit"></input>
+        </form>
       </div>
     );
   }
