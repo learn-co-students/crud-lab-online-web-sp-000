@@ -25,13 +25,26 @@ const mapStateToProps = (state) => {
   return { reviews: state.reviews };
 };
 
+// MY SOLUTION WHEN USING COMBINE REDUCERS:
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addReview: (text, restaurantId) =>
+//       dispatch({
+//         type: "ADD_REVIEW",
+//         text,
+//         restaurantId,
+//       }),
+//     deleteReview: (id) => dispatch({ type: "DELETE_REVIEW", id }),
+//   };
+// };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     addReview: (text, restaurantId) =>
       dispatch({
         type: "ADD_REVIEW",
-        text,
-        restaurantId,
+        review: { text, restaurantId },
       }),
     deleteReview: (id) => dispatch({ type: "DELETE_REVIEW", id }),
   };
