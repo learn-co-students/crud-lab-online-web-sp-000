@@ -5,6 +5,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        { console.log('app.js')}
         <RestaurantsContainer />
       </div>
     );
