@@ -12,9 +12,21 @@ export const deleteRestaurant = (restaurantId) => {
     }
 }
 
-export const addReview = (reviewText) => {
+export const addReview = (arg) => {
+    debugger
     return {
         type: 'ADD_REVIEW',
-        text: reviewText
+        review: {
+            text: arg.text,
+            restaurantId: arg.restaurantId
+        }
+        
+    }
+}
+
+export const deleteReview = (reviewId) => {
+    return {
+        type: 'DELETE_REVIEW',
+        id: reviewId
     }
 }

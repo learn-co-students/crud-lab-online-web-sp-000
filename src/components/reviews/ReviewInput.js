@@ -3,6 +3,11 @@ import Reviews from './Reviews';
 
 class ReviewInput extends Component {
 
+  constructor(props) {
+    super(props)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
   state = {
     text: ''
   }
@@ -15,9 +20,10 @@ class ReviewInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-
-    this.props.addReview(this.state.text)
-
+    debugger
+    let arg = {text: this.state.text, restaurantId: this.props.restaurantId}
+    this.props.addReview(arg)
+    
     this.setState({
       text: ''
     })

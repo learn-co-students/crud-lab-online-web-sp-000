@@ -9,29 +9,56 @@ export default function manageRestaurants(state = {reviews: [], restaurants: []}
                 id: cuid(),
                 text: action.text
             }
-
-            return {
-                ...state.reviews,
-                restaurants: [...state.restaurants, restaurant]
+            if (state.reviews === undefined) {
+                return {
+                    reviews: [],
+                    restaurants: [...state.restaurants, restaurant]
+                }
+            } else {
+                return {
+                    reviews: [...state.reviews],
+                    restaurants: [...state.restaurants, restaurant]
+                }
             }
+            
         
         case 'DELETE_RESTAURANT':
             const restaurantsFiltered = state.restaurants.filter(function (restaurant) {
                 return restaurant.id !== action.id
             })
             return {
-                ...state.reviews,
+                reviews: [...state.reviews],
                 restaurants: restaurantsFiltered
             }
         
         case 'ADD_REVIEW':
             const review = {
                 id: cuid(),
-                text: action.text
+                restaurantId: action.review.restaurantId,
+                text: action.review.text
             }
+           // debugger
+            if (state.reviews === undefined) {
+                return {
+                    restaurants: [...state.restaurants],
+                    reviews: [review]
+                }
+            } else {
+                return {
+                
+                    restaurants: [...state.restaurants],
+                    reviews: [...state.reviews, review]
+                }
+            }
+            
+
+        case 'DELETE_REVIEW':
+            const reviewsFiltered = state.reviews.filter(function (review) {
+                return review.id !== action.id
+            })
             return {
-                ...state.restaurants,
-                reviews: [...state.reviews, review]
+                restaurants: [...state.restaurants],
+                reviews: reviewsFiltered
             }
 
         default: 

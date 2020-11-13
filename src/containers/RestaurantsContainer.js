@@ -7,6 +7,7 @@ import { addRestaurant, deleteRestaurant } from '../actions/index'
 class RestaurantsContainer extends Component {
 
   render() {
+    //debugger
     return (
       <div>
         <RestaurantInput addRestaurant={this.props.addRestaurant} />
@@ -17,9 +18,7 @@ class RestaurantsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  return {
-    restaurants: state.restaurants
-  }
+  return state
 }
 
 const mapDispatchToProps = dispatch => {
