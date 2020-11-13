@@ -96,7 +96,7 @@ describe('ReviewInput Component', () => {
 
     textField.simulate('change', { target: { value: 'Hello', name: 'text', id: 'text' } });
     reviewForm.simulate('submit',  { preventDefault() {} });
-
+    
     expect(store.getState().reviews[0].restaurantId).to.equal(store.getState().restaurants[0].id);
   });
 });
@@ -119,7 +119,7 @@ describe('Reviews Component', () => {
     store.dispatch({ type: 'ADD_REVIEW', review: { text: "Was great", restaurantId } })
     store.dispatch({ type: 'ADD_REVIEW', review: { text: "Was not great", restaurantId } })
     const wrapper = mount(<Provider store={store}><App /></Provider>);
-
+    
 
     expect(wrapper.find(Review)).to.have.length(2);
   });
