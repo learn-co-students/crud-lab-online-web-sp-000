@@ -1,17 +1,35 @@
 import React, { Component } from 'react';
 import RestaurantInput from '../components/restaurants/RestaurantInput';
 import Restaurants from '../components/restaurants/Restaurants';
+import { connect } from 'react-redux'
+import { addRestaurant, deleteRestaurant } from '../actions/index'
 
 class RestaurantsContainer extends Component {
 
   render() {
+    //debugger
     return (
       <div>
-        <RestaurantInput />
-        <Restaurants />
+        <RestaurantInput addRestaurant={this.props.addRestaurant} />
+        <Restaurants restaurants={this.props.restaurants} deleteRestaurant={this.props.deleteRestaurant} />
       </div>
     )
   }
 }
 
-export default RestaurantsContainer;
+const mapStateToProps = state => {
+  return state
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addRestaurant: (restaurantText) => {
+      dispatch(addRestaurant(restaurantText))
+    },
+    deleteRestaurant: (restaurantId) => {
+      dispatch(deleteRestaurant(restaurantId))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantsContainer)
