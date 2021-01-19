@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
 
 class RestaurantInput extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      text: '',
+      text: ''
     };
-  }
+  };
 
-  handleChange = (event) => {
+  handleChange(event) {
     this.setState({
-      text: event.target.value
-    })
+      text: event.target.value,
+    });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit(event) {
     event.preventDefault();
     this.props.addRestaurant(this.state.text)
     this.setState({
-      text: '',
-    })
+      text: ''
+    });
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Add Restaurant</label>
-          <input type="text" onChange={this.handleChange} value={this.state.text}/>
+        <form onSubmit={(event) => this.handleSubmit(event)} >
+          <input
+            type="text"
+            value={this.state.text}
+            onChange={(event) => this.handleChange(event)} />
           <input type="submit" />
         </form>
       </div>
@@ -36,8 +37,4 @@ class RestaurantInput extends Component {
   }
 };
 
-  const mapDispatchToProps = dispatch => ({
-    addRestaurant: text => dispatch({ type: "ADD_RESTAURANT", text})
-  })
-
-export default connect(null, mapDispatchToProps)(RestaurantInput);
+export default RestaurantInput;
