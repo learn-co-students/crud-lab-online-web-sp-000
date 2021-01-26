@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReviewsContainer from '../../containers/ReviewsContainer';
+import { Button } from '@material-ui/core';
 
 class Restaurant extends Component {
   render() {
@@ -9,7 +10,7 @@ class Restaurant extends Component {
       <div>
         <li>
           {restaurant.text}
-          <button onClick = {()=>{removeRestaurant(restaurant.id)}}> X </button>
+          <Button color = "primary" onClick = {()=>{removeRestaurant(restaurant.id)}}> X </Button>
           <ReviewsContainer restaurantId={restaurant.id}/>
         </li>
       </div>

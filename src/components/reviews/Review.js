@@ -11,7 +11,7 @@ class Review extends Component {
 
   render() {
    
-    const { review, removeReview } = this.props;
+    const { review } = this.props;
     return (
       <div>
         <li>
