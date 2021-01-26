@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 
 class Review extends Component {
+  
+
+      handleClick = (e)=>{
+      const { review, removeReview } = this.props;
+      e.preventDefault()
+      removeReview(review.id)
+    }
 
   render() {
-    const { review } = this.props;
-
+   
+    const { review, removeReview } = this.props;
     return (
       <div>
         <li>
           {review.text}
         </li>
-        <button> X </button>
+        {/* <button onClick = {()=>{removeReview(review.id)}}> X </button> */}
+        <button onClick = {this.handleClick}> X </button>
+
       </div>
     );
   }
