@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import ReviewsContainer from '../../containers/ReviewsContainer';
+import { Button } from '@material-ui/core';
 
 class Restaurant extends Component {
-
-
   render() {
-    const { restaurant } = this.props;
+    const {restaurant, removeRestaurant } = this.props;
 
     return (
       <div>
         <li>
           {restaurant.text}
-          <button> X </button>
-          <ReviewsContainer restaurant={restaurant}/>
+          <Button color = "primary" onClick = {()=>{removeRestaurant(restaurant.id)}}> X </Button>
+          <ReviewsContainer restaurantId={restaurant.id}/>
         </li>
       </div>
     );
