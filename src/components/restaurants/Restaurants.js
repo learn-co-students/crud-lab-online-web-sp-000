@@ -5,10 +5,10 @@ class Restaurants extends Component {
   render() {
 
 
-    // const { restaurants, deleteRestaurant } = this.props
+    const { restaurants, deleteRestaurant } = this.props
 
-    const restaurants = this.props.restaurants
-    const deleteRestaurant = this.props.deleteRestaurant
+    // const restaurants = this.props.restaurants
+    // const deleteRestaurant = this.props.deleteRestaurant
     
     const restaurantsList = restaurants.map(restaurant => { 
 
