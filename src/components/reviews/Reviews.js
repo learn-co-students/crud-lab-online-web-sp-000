@@ -4,11 +4,7 @@ import Review from './Review';
 class Reviews extends Component {
   render() {
 
-    // const { reviews, restaurantId, deleteReview } = this.props
-
-    const reviews = this.props.reviews
-    const restaurantId = this.props.restaurantId
-    const deleteReview = this.props.deleteReview
+    const { reviews, restaurantId, deleteReview } = this.props
 
     const associatedReviews = reviews.filter(review => review.restaurantId === restaurantId);
 

@@ -21,7 +21,6 @@ export default function manageRestaurants(state = {restaurants: [], reviews:[]},
 
 
         case 'ADD_REVIEW':
-            // debugger
             const review = { 
                 id: cuidFn(),
                 restaurantId: action.review.restaurantId,
