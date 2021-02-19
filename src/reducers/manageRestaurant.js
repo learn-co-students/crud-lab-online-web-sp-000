@@ -24,7 +24,9 @@ function restaurantsReducer(state = [], action) {
 function reviewsReducer(state = [], action) {
     switch (action.type) {
         case "ADD_REVIEW":
-            return [...state, {id: cuid(), text: action.text, restaurantId: action.restaurantId}]
+            const review = { text: action.review.text, restaurantId: action.review.restaurantId, id: cuid() };
+            return [...state, review]
+            // return [...state, {id: cuid(), text: action.text, restaurantId: action.restaurantId}]
 
         case "DELETE_REVIEW":
             return state.filter(r => r.id !== action.id)
