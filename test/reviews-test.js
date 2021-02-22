@@ -3,7 +3,7 @@ import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux'
-import manageRestaurant, { cuidFn } from '../src/reducers/manageRestaurant';
+import manageRestaurant, { cuidFn } from '../src/reducers/rootReducer';
 import App from '../src/App';
 import Restaurant from '../src/components/restaurants/Restaurant';
 import ReviewInput from '../src/components/reviews/ReviewInput';
