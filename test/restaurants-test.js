@@ -4,7 +4,7 @@ import { configure, shallow, mount } from 'enzyme';
 import RestaurantInput from '../src/components/restaurants/RestaurantInput'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import manageRestaurant, { cuidFn } from '../src/reducers/manageRestaurant'
+import manageRestaurant, { cuidFn } from '../src/reducers/rootReducer'
 import App from '../src/App'
 import Restaurant from '../src/components/restaurants/Restaurant'
 import Adapter from 'enzyme-adapter-react-16'
@@ -36,14 +36,11 @@ describe('RestaurantInput', () => {
 
     let form = wrapper.find('form');
     let input = wrapper.find('input').first();
-
-    // console.log(store.getState());
     input.simulate('change', { target: { value: 'Hello', name: 'text', id: 'text' }});
     form.simulate('submit',  { preventDefault() {} })
-    // console.log(store.getState());
+
     expect(store.getState().restaurants[0].text).to.equal('Hello')
   });
-
 });
 
 describe('Restaurants Component', () => {
@@ -117,16 +114,15 @@ describe('Restaurant Component with Redux', () => {
   it('has a button that dispatches a DELETE_RESTAURANT action with the proper id when clicked', ()=> {
     const store = createStore(manageRestaurant);
     store.dispatch({type: 'ADD_RESTAURANT', text: 'Bagel World'})
-
+    // console.log(store.getState())
     const wrapper = mount(<Provider store={store}><App /></Provider>)
-
+    // console.log(store.getState())
     let deleteButton = wrapper.find('button').first();
 
     deleteButton.simulate('click',  { preventDefault() {} });
+    // deleteButton.prop('onClick')()
 
     expect(store.getState().restaurants.length).to.equal(0);
-
-
   });
 
   it('updates the state of the store to remove the component', () => {
