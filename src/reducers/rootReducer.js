@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
 import manageRestaurants from "./manageRestaurant";
+import manageReviews from "./manageReview";
 
 const rootReducer = combineReducers({
   restaurants: manageRestaurants,
-  review: []
+  reviews: manageReviews
 });
 
 export default rootReducer;

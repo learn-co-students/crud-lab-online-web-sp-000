@@ -4,7 +4,7 @@ import { configure, shallow, mount } from 'enzyme';
 import RestaurantInput from '../src/components/restaurants/RestaurantInput'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import manageRestaurant, { cuidFn } from '../src/reducers/rootReducer'
+import manageRestaurant, { cuidF } from '../src/reducers/rootReducer'
 import App from '../src/App'
 import Restaurant from '../src/components/restaurants/Restaurant'
 import Adapter from 'enzyme-adapter-react-16'
@@ -116,7 +116,6 @@ describe('Restaurant Component with Redux', () => {
     store.dispatch({type: 'ADD_RESTAURANT', text: 'Bagel World'})
     // console.log(store.getState())
     const wrapper = mount(<Provider store={store}><App /></Provider>)
-    // console.log(store.getState())
     let deleteButton = wrapper.find('button').first();
 
     deleteButton.simulate('click',  { preventDefault() {} });
