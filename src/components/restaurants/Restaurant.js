@@ -5,13 +5,13 @@ class Restaurant extends Component {
 
 
   render() {
-    const { restaurant } = this.props;
+    const { restaurant, removeRestaurant } = this.props;
 
     return (
       <div>
         <li>
           {restaurant.text}
-          <button> X </button>
+          <button onClick={() => {removeRestaurant(restaurant.id)}}> X </button>
           <ReviewsContainer restaurant={restaurant}/>
         </li>
       </div>
@@ -20,3 +20,10 @@ class Restaurant extends Component {
 };
 
 export default Restaurant;
+
+// responsible for each individual restaurant.
+// Users able to delete restaurants wire up the button
+// give each restaurant an ID. 
+// use the cuid library that we have already imported into the reducer file for you
+
+// Restaurants stored in Redux should have text and id keys.

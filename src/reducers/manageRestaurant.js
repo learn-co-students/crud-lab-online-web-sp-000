@@ -1,5 +1,45 @@
-import cuid from 'cuid';
+import cuid from "cuid";
 
-export default function manageRestaurants(state, action) {
-
+export default function manageRestaurants(
+  state = {
+    restaurants: [],
+    reviews: [],
+  },
+  action
+) {
+  switch (action.type) {
+    case 'ADD_RESTAURANT':
+      return {
+        ...state,
+        restaurants: [
+          ...state.restaurants,
+          {
+            id: cuid(),
+            text: action.text
+          },
+        ],
+      }
+    case 'DELETE_RESTAURANT':
+      return {
+        ...state,
+        restaurants: state.restaurants.filter(r => r.id !== action.payload)
+      }
+    case 'ADD_REVIEW':
+      const review = {id: cuid(), text: action.review.text, restaurantId: action.review.restaurantId}
+      
+      return {
+        ...state,
+        reviews: [
+          ...state.reviews,
+          review
+        ]
+      }
+    case 'DELETE_REVIEW':
+      return {
+        ...state,
+        reviews: state.reviews.filter(r => r.id !== action.payload.id)
+      }
+    default:
+      return state;
+  }
 }
