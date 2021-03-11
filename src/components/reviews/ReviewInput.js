@@ -33,7 +33,8 @@ class ReviewInput extends Component {
           <input type="submit"/> 
         </form>
 
-        <Reviews/>
+        <Reviews reviews={this.props.reviews} deleteReview={this.props.deleteReview}/> 
+        {/* tried to add props to this Reviews component-- may be incorrect and is currently not working */}
       </div>
     );
   }
