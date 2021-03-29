@@ -13,5 +13,10 @@ class ReviewsContainer extends Component {
     )
   }
 }
-
+// const mapDispatchToProps = dispatch => ({
+//   addResturant: name => dispatch({ type: "ADD_RESTURANT", name}),
+//   deleteResturant: id => dispatch({ type: "DELETE_RESTURANT", id }),
+//   addReview: resturant_id => dispatch({ type: "ADD_REVIEW", resturant_id }),
+//   deleteReview: id => dispatch({ type: "DELETE_REVIEW", id })
+// })
 export default ReviewsContainer;
