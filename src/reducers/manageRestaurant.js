@@ -8,20 +8,21 @@ const manageRestaurant = combineReducers({
 
 export default manageRestaurant;
 
-function restaurantsReducer (state = []
+function restaurantsReducer (state=[]
 , action ) {
     switch(action.type){
+
         case "ADD_RESTAURANT":
             const restaurant = {
                 id: cuid(),
-                name: action.name
+                text: action.text
             }
-            console.log(state)
-            return {...state, restaurant }
-            // return {...state, restaurants: [...state.restaurants, restaurant]};
+            return [...state, restaurant]
 
         case "DELETE_RESTAURANT":
-            return {...state, restaurants: state.restaurants.filter(resturant => restaurant.id !== action.id) };
+
+            return state.filter(restaurant => restaurant.id !== action.id);
+
         default:
             return state;
     }
@@ -33,13 +34,13 @@ function reviewsReducer(state = [], action ){
             const review = {
                 id: cuid(),
                 text: action.review.text,
-                resturant_id: action.review.restaurant_id
+                restaurantId: action.review.restaurantId
             }
-            return {...state, reviews: [...state.reviews, review ]};
+            return [...state,  review ];
         case "DELETE_REVIEW":
-            return {...state, reviews: state.reviews.filter(review => review.id !== action.id)};
+            return state.filter(review => review.id !== action.id);
         case "DELETE_RESTAURANT":
-            return {...state, reviews: state.reviews.filter(review => review.restaurant_id !== action.id)}
+            return state.filter(review => review.restaurantId !== action.id);
         default:
             return state
     }
