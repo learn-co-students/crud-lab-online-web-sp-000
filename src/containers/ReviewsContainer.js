@@ -8,7 +8,6 @@ class ReviewsContainer extends Component {
   render() {
     return (
       <div>
-        // displays the ReviewInput component as a child of each Restaurant Component
         <ReviewInput
           addReview={this.props.addReview}
           restaurantId={this.props.restaurant.id}

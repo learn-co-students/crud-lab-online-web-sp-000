@@ -15,9 +15,7 @@ class ReviewInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    // adds a review to the store when the form is submitted
     this.props.addReview({text: this.state.text, restaurantId: this.props.restaurantId })
-    // updates the state of the store after submitting the form
     this.setState({
       text: ''
     })

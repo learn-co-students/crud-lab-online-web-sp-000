@@ -3,7 +3,6 @@ import ReviewsContainer from '../../containers/ReviewsContainer';
 
 class Restaurant extends Component {
 
-// has a button that dispatches a DELETE_RESTAURANT action with the proper id when clicked
   handleOnClick = () => {
     this.props.deleteRestaurant(this.props.restaurant.id)
   }

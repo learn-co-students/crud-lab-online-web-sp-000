@@ -12,7 +12,6 @@ export default function manageRestaurants(state = {
           restaurants: [...state.restaurants, restaurant],
           reviews: [...state.reviews]
         }
-        // updates the state of the store to remove the component
       case 'DELETE_RESTAURANT':
         const restaurants = state.restaurants.filter(restaurant => restaurant.id !== action.id);
         const rev = state.reviews.filter(review => review.restaurantId !== action.id);
