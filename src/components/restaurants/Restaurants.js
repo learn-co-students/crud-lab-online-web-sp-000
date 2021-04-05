@@ -10,11 +10,13 @@ class Restaurants extends Component {
         // displays a list of restaurant components
         // has the restaurant as a prop
         {restaurants.map(restaurant => {
-          <Restaurant
-            key={restaurant.id}
-            restaurant={restaurant}
-            deleteRestaurant={deleteRestaurant}
-            />})}
+            <Restaurant
+              key={restaurant.id}
+              restaurant={restaurant}
+              deleteRestaurant={deleteRestaurant}
+              />
+          })
+        };
       </ul>
     );
   }
