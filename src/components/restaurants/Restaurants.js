@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Restaurant from './Restaurants';
+import Restaurant from './Restaurant';
 
 class Restaurants extends Component {
   render() {
@@ -7,8 +7,6 @@ class Restaurants extends Component {
 
     return(
       <ul>
-        // displays a list of restaurant components
-        // has the restaurant as a prop
         {restaurants.map(restaurant => {
             <Restaurant
               key={restaurant.id}
@@ -16,7 +14,7 @@ class Restaurants extends Component {
               deleteRestaurant={deleteRestaurant}
               />
           })
-        };
+        }
       </ul>
     );
   }
