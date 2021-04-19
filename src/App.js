@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import RestaurantsContainer from './containers/RestaurantsContainer';
 
 class App extends Component {
