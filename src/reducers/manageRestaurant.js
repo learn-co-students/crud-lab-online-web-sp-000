@@ -3,7 +3,7 @@ export const cuidFn = cuid;
 
 export default function manageRestaurants(state = {
   restaurants: [],
-  reviews: [],
+  reviews: []
 }, action) {
   switch (action.type) {
 
