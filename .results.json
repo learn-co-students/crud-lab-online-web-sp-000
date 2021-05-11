@@ -1,0 +1,541 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 25,
+    "passes": 23,
+    "pending": 0,
+    "failures": 2,
+    "start": "2021-04-07T00:41:34.433Z",
+    "end": "2021-04-07T00:41:35.077Z",
+    "duration": 644
+  },
+  "tests": [
+    {
+      "title": "has an text input field",
+      "fullTitle": "RestaurantInput has an text input field",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 41,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "has an initial state with text key set to empty string",
+      "fullTitle": "RestaurantInput has an initial state with text key set to empty string",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "changes the component state with an onChange event",
+      "fullTitle": "RestaurantInput changes the component state with an onChange event",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 9,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "updates the state of the store after submitting the form",
+      "fullTitle": "RestaurantInput updates the state of the store after submitting the form",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 83,
+      "currentRetry": 0,
+      "speed": "slow",
+      "err": {}
+    },
+    {
+      "title": "displays a list of restaurant components",
+      "fullTitle": "Restaurants Component displays a list of restaurant components",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 37,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "displays the appropriate text",
+      "fullTitle": "Restaurant Component displays the appropriate text",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "renders an li",
+      "fullTitle": "Restaurant Component renders an li",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has an unique id property for each element",
+      "fullTitle": "RestaurantInput Component with Redux has an unique id property for each element",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 20,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has the restaurant as a prop",
+      "fullTitle": "Restaurant Component with Redux has the restaurant as a prop",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 27,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has a button that dispatches a DELETE_RESTAURANT action with the proper id when clicked",
+      "fullTitle": "Restaurant Component with Redux has a button that dispatches a DELETE_RESTAURANT action with the proper id when clicked",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 11,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 1 to equal 0",
+        "showDiff": true,
+        "actual": "1",
+        "expected": "0",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 1 to equal 0\n    at Context.<anonymous> (test/restaurants-test.js:127:52)\n    at processImmediate (node:internal/timers:464:21)",
+        "multiple": [
+          {
+            "name": "AssertionError",
+            "message": "expected 1 to equal 0",
+            "showDiff": true,
+            "actual": "1",
+            "expected": "0",
+            "operator": "strictEqual",
+            "multiple": "AssertionError: expected 1 to equal 0",
+            "stack": "AssertionError: expected 1 to equal 0\n    at Context.<anonymous> (test/restaurants-test.js:127:52)\n    at processImmediate (node:internal/timers:464:21)"
+          }
+        ]
+      }
+    },
+    {
+      "title": "updates the state of the store to remove the component",
+      "fullTitle": "Restaurant Component with Redux updates the state of the store to remove the component",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 21,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 2 to equal 1",
+        "showDiff": true,
+        "actual": "2",
+        "expected": "1",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 2 to equal 1\n    at Context.<anonymous> (test/restaurants-test.js:153:52)\n    at processImmediate (node:internal/timers:464:21)",
+        "multiple": [
+          {
+            "name": "AssertionError",
+            "message": "expected 2 to equal 1",
+            "showDiff": true,
+            "actual": "2",
+            "expected": "1",
+            "operator": "strictEqual",
+            "multiple": "AssertionError: expected 2 to equal 1",
+            "stack": "AssertionError: expected 2 to equal 1\n    at Context.<anonymous> (test/restaurants-test.js:153:52)\n    at processImmediate (node:internal/timers:464:21)"
+          }
+        ]
+      }
+    },
+    {
+      "title": "displays the ReviewInput component as a child of each Restaurant Component",
+      "fullTitle": "ReviewInput Component displays the ReviewInput component as a child of each Restaurant Component",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 12,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has two text input fields, one for review input, and another for submitting",
+      "fullTitle": "ReviewInput Component has two text input fields, one for review input, and another for submitting",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has an initial state with text key set to empty string",
+      "fullTitle": "ReviewInput Component has an initial state with text key set to empty string",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "changes the component state with an onChange event",
+      "fullTitle": "ReviewInput Component changes the component state with an onChange event",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "adds a review to the store when the form is submitted",
+      "fullTitle": "ReviewInput Component adds a review to the store when the form is submitted",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 40,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "updates the state of the store after submitting the form",
+      "fullTitle": "ReviewInput Component updates the state of the store after submitting the form",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 27,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "sets a property of restaurantId on the review input component from the parent components id",
+      "fullTitle": "ReviewInput Component sets a property of restaurantId on the review input component from the parent components id",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 14,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "associates the review with the restaurant with a foreign key on the review",
+      "fullTitle": "ReviewInput Component associates the review with the restaurant with a foreign key on the review",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 44,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "is a child of the ReviewsContainer component",
+      "fullTitle": "Reviews Component is a child of the ReviewsContainer component",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 43,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "displays a review for when it is associated with the restaurant",
+      "fullTitle": "Reviews Component displays a review for when it is associated with the restaurant",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 15,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "does not display any review unassociated with the restaurant",
+      "fullTitle": "Reviews Component does not display any review unassociated with the restaurant",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 16,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has an unique id property that for each element",
+      "fullTitle": "Reviews Component has an unique id property that for each element",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 22,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has a button that dispatches a DELETE_REVIEW action when clicked",
+      "fullTitle": "Reviews Component has a button that dispatches a DELETE_REVIEW action when clicked",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 21,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "updates the state of the store to remove the component",
+      "fullTitle": "Reviews Component updates the state of the store to remove the component",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 30,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [
+    {
+      "title": "has a button that dispatches a DELETE_RESTAURANT action with the proper id when clicked",
+      "fullTitle": "Restaurant Component with Redux has a button that dispatches a DELETE_RESTAURANT action with the proper id when clicked",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 11,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 1 to equal 0",
+        "showDiff": true,
+        "actual": "1",
+        "expected": "0",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 1 to equal 0\n    at Context.<anonymous> (test/restaurants-test.js:127:52)\n    at processImmediate (node:internal/timers:464:21)",
+        "multiple": [
+          {
+            "name": "AssertionError",
+            "message": "expected 1 to equal 0",
+            "showDiff": true,
+            "actual": "1",
+            "expected": "0",
+            "operator": "strictEqual",
+            "multiple": "AssertionError: expected 1 to equal 0",
+            "stack": "AssertionError: expected 1 to equal 0\n    at Context.<anonymous> (test/restaurants-test.js:127:52)\n    at processImmediate (node:internal/timers:464:21)"
+          }
+        ]
+      }
+    },
+    {
+      "title": "updates the state of the store to remove the component",
+      "fullTitle": "Restaurant Component with Redux updates the state of the store to remove the component",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 21,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 2 to equal 1",
+        "showDiff": true,
+        "actual": "2",
+        "expected": "1",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 2 to equal 1\n    at Context.<anonymous> (test/restaurants-test.js:153:52)\n    at processImmediate (node:internal/timers:464:21)",
+        "multiple": [
+          {
+            "name": "AssertionError",
+            "message": "expected 2 to equal 1",
+            "showDiff": true,
+            "actual": "2",
+            "expected": "1",
+            "operator": "strictEqual",
+            "multiple": "AssertionError: expected 2 to equal 1",
+            "stack": "AssertionError: expected 2 to equal 1\n    at Context.<anonymous> (test/restaurants-test.js:153:52)\n    at processImmediate (node:internal/timers:464:21)"
+          }
+        ]
+      }
+    }
+  ],
+  "passes": [
+    {
+      "title": "has an text input field",
+      "fullTitle": "RestaurantInput has an text input field",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 41,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "has an initial state with text key set to empty string",
+      "fullTitle": "RestaurantInput has an initial state with text key set to empty string",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "changes the component state with an onChange event",
+      "fullTitle": "RestaurantInput changes the component state with an onChange event",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 9,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "updates the state of the store after submitting the form",
+      "fullTitle": "RestaurantInput updates the state of the store after submitting the form",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 83,
+      "currentRetry": 0,
+      "speed": "slow",
+      "err": {}
+    },
+    {
+      "title": "displays a list of restaurant components",
+      "fullTitle": "Restaurants Component displays a list of restaurant components",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 37,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "displays the appropriate text",
+      "fullTitle": "Restaurant Component displays the appropriate text",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "renders an li",
+      "fullTitle": "Restaurant Component renders an li",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has an unique id property for each element",
+      "fullTitle": "RestaurantInput Component with Redux has an unique id property for each element",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 20,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has the restaurant as a prop",
+      "fullTitle": "Restaurant Component with Redux has the restaurant as a prop",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/restaurants-test.js",
+      "duration": 27,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "displays the ReviewInput component as a child of each Restaurant Component",
+      "fullTitle": "ReviewInput Component displays the ReviewInput component as a child of each Restaurant Component",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 12,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has two text input fields, one for review input, and another for submitting",
+      "fullTitle": "ReviewInput Component has two text input fields, one for review input, and another for submitting",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has an initial state with text key set to empty string",
+      "fullTitle": "ReviewInput Component has an initial state with text key set to empty string",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "changes the component state with an onChange event",
+      "fullTitle": "ReviewInput Component changes the component state with an onChange event",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "adds a review to the store when the form is submitted",
+      "fullTitle": "ReviewInput Component adds a review to the store when the form is submitted",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 40,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "updates the state of the store after submitting the form",
+      "fullTitle": "ReviewInput Component updates the state of the store after submitting the form",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 27,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "sets a property of restaurantId on the review input component from the parent components id",
+      "fullTitle": "ReviewInput Component sets a property of restaurantId on the review input component from the parent components id",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 14,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "associates the review with the restaurant with a foreign key on the review",
+      "fullTitle": "ReviewInput Component associates the review with the restaurant with a foreign key on the review",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 44,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "is a child of the ReviewsContainer component",
+      "fullTitle": "Reviews Component is a child of the ReviewsContainer component",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 43,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "displays a review for when it is associated with the restaurant",
+      "fullTitle": "Reviews Component displays a review for when it is associated with the restaurant",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 15,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "does not display any review unassociated with the restaurant",
+      "fullTitle": "Reviews Component does not display any review unassociated with the restaurant",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 16,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has an unique id property that for each element",
+      "fullTitle": "Reviews Component has an unique id property that for each element",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 22,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "has a button that dispatches a DELETE_REVIEW action when clicked",
+      "fullTitle": "Reviews Component has a button that dispatches a DELETE_REVIEW action when clicked",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 21,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "updates the state of the store to remove the component",
+      "fullTitle": "Reviews Component updates the state of the store to remove the component",
+      "file": "/mnt/c/users/nllew/dev/flatiron/labs/crud-lab-online-web-sp-000/test/reviews-test.js",
+      "duration": 30,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ]
+}
