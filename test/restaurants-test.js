@@ -8,12 +8,14 @@ import manageRestaurant, { cuidFn } from '../src/reducers/manageRestaurant'
 import App from '../src/App'
 import Restaurant from '../src/components/restaurants/Restaurant'
 import Adapter from 'enzyme-adapter-react-16'
+//import rootReducer from '../src/reducers/index';
 
 configure({ adapter: new Adapter() })
 
 describe('RestaurantInput', () => {
   it('has an text input field', () => {
     const wrapper = shallow(<RestaurantInput />);
+    
     expect(wrapper.find('input').first().type()).to.equal('input');
   });
 
@@ -30,8 +32,11 @@ describe('RestaurantInput', () => {
     expect(wrapper.state('text')).to.equal('Hello');
   });
 
+
+
   it('updates the state of the store after submitting the form', () => {
     const store = createStore(manageRestaurant);
+   //  const store = createStore(rootReducer);
     const wrapper = mount(<Provider store={store}><App /></Provider>);
 
     let form = wrapper.find('form');
@@ -40,7 +45,7 @@ describe('RestaurantInput', () => {
     // console.log(store.getState());
     input.simulate('change', { target: { value: 'Hello', name: 'text', id: 'text' }});
     form.simulate('submit',  { preventDefault() {} })
-    // console.log(store.getState());
+     console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAA", store.getState());
     expect(store.getState().restaurants[0].text).to.equal('Hello')
   });
 
