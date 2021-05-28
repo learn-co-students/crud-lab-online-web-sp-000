@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 
 class Review extends Component {
 
+  removeReview = () => {
+    this.props.removeReview(this.props.review.id)
+  }
+
+
+
+
+
+
+
   render() {
     const { review } = this.props;
 
@@ -10,7 +20,7 @@ class Review extends Component {
         <li>
           {review.text}
         </li>
-        <button> X </button>
+        <button onClick={this.removeReview}> X </button>
       </div>
     );
   }
