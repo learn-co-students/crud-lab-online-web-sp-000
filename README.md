@@ -15,6 +15,7 @@ implement container components to connect each resource to your Redux store.
 
 ## Instructions
 
+
 #### Restaurants ####
 
 Start off by working on the components for displaying restaurants. First, 
