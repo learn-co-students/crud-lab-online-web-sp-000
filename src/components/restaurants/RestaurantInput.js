@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 class RestaurantInput extends Component {
   constructor(props) {
@@ -17,11 +17,13 @@ class RestaurantInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addItem(this.state.text);
-    // this.props.dispatch({
+    this.props.dispatch(this.state.text);
+    // this.props.addItem(this.state.text);
+    // // this.props.dispatch({
     //   type: "ADD_RESTAURANT",
     //   text: this.state.text,
     // });
+
     this.setState({
       text: "",
     });
@@ -47,16 +49,16 @@ class RestaurantInput extends Component {
 
 // export default RestaurantInput;
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addItem: (itemText) => {
-      dispatch({
-        type: "ADD_RESTAURANT",
-        text: itemText,
-      });
-    },
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addItem: (itemText) => {
+//       dispatch({
+//         type: "ADD_RESTAURANT",
+//         text: itemText,
+//       });
+//     },
+//   };
+// };
 
-export default connect(null, mapDispatchToProps)(RestaurantInput);
-// export default connect(null)(RestaurantInput);
+// export default connect(null, mapDispatchToProps)(RestaurantInput);
+export default RestaurantInput;
