@@ -29,8 +29,8 @@ class RestaurantInput extends Component {
 
   render() {
     return (
-      <div>
-        Restaurant Input
+      // <div>
+      //   Restaurant Input
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -40,7 +40,7 @@ class RestaurantInput extends Component {
             onChange={this.handleChange}
           />
         </form>
-      </div>
+      // </div>
     );
   }
 }
