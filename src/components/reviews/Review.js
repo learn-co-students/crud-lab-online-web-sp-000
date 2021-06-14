@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Review extends Component {
+
+  handleClick = event => {
+    this.props.delete(this.props.review.id)
+  }
 
   render() {
     const { review } = this.props;
 
     return (
-      <div>
-        <li>
-          {review.text}
-        </li>
-        <button> X </button>
-      </div>
+      <li>
+        {review.text}
+        <button onClick={this.handleClick}> X </button>
+      </li>
     );
   }
-
-};
+}
 
 export default Review;
